@@ -1,0 +1,89 @@
+body{
+    background-color: black;
+}
+.simple{
+    background-color: black;
+    max-width: 30%;
+    min-width: 400px;
+    height: 680px;
+    margin:60px 500px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calc{
+    background-color: #ebeaea;
+    width: 80%;
+    height: 90%;
+    border-radius: 30px;
+   
+}
+.calc>h2,
+h3{
+    text-align: center;
+}
+
+.affichage .saisie{
+    
+    height: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 30px;
+    color: gray;
+   
+}
+.res{
+    border: none;
+    height: 30px;
+    direction: rtl;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(130, 129, 129);
+}
+.affichage{
+    margin-left: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow:-6px -6px 6px white, 6px 6px 6px rgb(195, 194, 194);
+    border: solid 10px rgb(219, 219, 219);
+}
+
+.btns{
+    padding-top: 20px;
+   
+    display: flex;
+    justify-content: center;
+
+   flex-wrap: wrap;
+   gap: 20px 20px;
+}
+.btn{
+    border: 0px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #efefef;
+    box-shadow:-4px -4px 4px white, 4px 4px 4px rgb(195, 194, 194);
+}
+.btn:nth-child(19){
+    background-color: #a0c1e6;
+    width: 140px;
+    border-radius: 30px;
+}
+
+.btn:nth-child(-n+2){
+    background-color: #ffcea9;
+    border-radius: 30px;
+}
+.btn:nth-child(3),
+.btn:nth-child(4n){
+    background-color: #a0c1e6;
+}
+input:focus{
+    outline: none;
+}
