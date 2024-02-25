@@ -94,41 +94,58 @@ input:focus{
 @media screen and (max-width: 767px) {
     .simple{
         background-color: black;
-        max-width: 760px;
-        min-width: 760px;
-        height: 1140px;
-        margin:-20px 25px;
-        border-radius: 20px;
+        max-width: 100%;
+        min-width: 100%;
+        height: auto;
+        margin:0px 0px;
+        
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    .calc{
+        background-color: #ebeaea;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+       
+    }
    
     .btns{
-        padding-top: 20px;
+        padding-top: 5%;
        
         display: flex;
         justify-content: center;
     
        flex-wrap: wrap;
-       gap: 40px 20px;
+       gap: 30px 6%;
     }
 
-    .btn:nth-child(19){
+    .btn:nth-child(19){  
         background-color: #a0c1e6;
-        width: 250px;
+        width: 40%;
         border-radius: 60px;
     }
     .btn{
         border: 0px;
-        width: 110px;
-        height: 110px;
-        border-radius: 110%;
+        width: 17%;
+        height: 60px;
+        border-radius: 50%;
         font-weight: bold;
         font-size: 20px;
         background-color: #efefef;
         box-shadow:-4px -4px 4px white, 4px 4px 4px rgb(195, 194, 194);
     }
+    .affichage{
+        margin-left: 6%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow:-6px -6px 6px white, 6px 6px 6px rgb(195, 194, 194);
+        border: solid 10px rgb(219, 219, 219);
+    }
+
 }
 
 .btn:active{
