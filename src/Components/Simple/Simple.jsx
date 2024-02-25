@@ -7,10 +7,10 @@ const valeur=useRef(0);
 const result=useRef(0);
 
 const saisieHandleInput=(e)=>{
-    if(e.target.innerText==='C'){valeur.current.value=0
+    if(e.target.innerText=='C'){valeur.current.value=0
     result.current.value=0;
     }
-    else if(e.target.innerText==='DEL'){
+    else if(e.target.innerText=='DEL'){
         if(valeur.current.value==''){result.current.value=0;}
 
 
@@ -20,9 +20,9 @@ const saisieHandleInput=(e)=>{
         valeur.current.setSelectionRange(cur-1,cur-1)
         valeur.current.focus()
     }
-    else if(e.target.innerText==='0' && valeur.current.value=='0'){
+    else if(e.target.innerText=='0' && valeur.current.value=='0'){
          }
-         else if(e.target.innerText==='.' && valeur.current.value==''){
+    else if(e.target.innerText=='.' && valeur.current.value==''){
             valeur.current.value+='0.'
         }
          
@@ -31,7 +31,11 @@ const saisieHandleInput=(e)=>{
             valeur.current.value=valeur.current.value.slice(0,-1) 
   
         }
-    valeur.current.value+=e.target.innerText
+        let cur=valeur.current.selectionStart
+        valeur.current.value = valeur.current.value.substring(0, cur)+e.target.innerText + valeur.current.value.substring(cur);
+        valeur.current.setSelectionRange(cur+1,cur+1)
+        valeur.current.focus()
+    
     
   
     }
@@ -49,21 +53,16 @@ const calculateResult = (expression) => {
       return result;
     } catch (error) {
       // If there's an error in the expression, return NaN
-      return NaN;
+      return 'Erreur';
     }
   };
 
 
 const calcHandleInput=(e)=>{
    
-    if(e.target.innerText=='='){
+   
        result.current.value=calculateResult(valeur.current.value.toString())
-       
-       
-       console.log()
-    }else{
-        valeur.current.value+=e.target.innerText
-    }
+    
     }
 
 
@@ -93,20 +92,20 @@ const calcHandleInput=(e)=>{
         <div className="btns">
             <button className="btn" onClick={saisieHandleInput}>C</button>
             <button className="btn"onClick={saisieHandleInput}>DEL</button>
-            <button className="btn"onClick={calcHandleInput}>%</button>
-            <button className="btn"onClick={calcHandleInput}>/</button>
+            <button className="btn"onClick={saisieHandleInput}>()</button>
+            <button className="btn"onClick={saisieHandleInput}>/</button>
             <button className="btn"onClick={saisieHandleInput}>7</button>
             <button className="btn"onClick={saisieHandleInput}>8</button>
             <button className="btn"onClick={saisieHandleInput}>9</button>
-            <button className="btn"onClick={calcHandleInput}>*</button>
+            <button className="btn"onClick={saisieHandleInput}>*</button>
             <button className="btn"onClick={saisieHandleInput}>4</button>
             <button className="btn"onClick={saisieHandleInput}>5</button>
             <button className="btn"onClick={saisieHandleInput}>6</button>
-            <button className="btn"onClick={calcHandleInput}>-</button>
+            <button className="btn"onClick={saisieHandleInput}>-</button>
             <button className="btn"onClick={saisieHandleInput}>1</button>
             <button className="btn"onClick={saisieHandleInput}>2</button>
             <button className="btn"onClick={saisieHandleInput}>3</button>
-            <button className="btn"onClick={calcHandleInput}>+</button>
+            <button className="btn"onClick={saisieHandleInput}>+</button>
             <button className="btn"onClick={saisieHandleInput}>.</button>
             <button className="btn"onClick={saisieHandleInput}>0</button>
             <button className="btn"onClick={calcHandleInput}>=</button>
