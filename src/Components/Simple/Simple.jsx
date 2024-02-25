@@ -86,7 +86,7 @@ const calcHandleInput=(e)=>{
             <h2>Calculatrice</h2>
             <div className="affichage">
             <input type="text" name="" id="" className='res' readOnly ref={result}/>
-            <input type="text" name="" id="" className='saisie' ref={valeur} />
+            <input type="text" name="" id="" className='saisie' readOnly ref={valeur} />
             </div>
 
         <div className="btns">
